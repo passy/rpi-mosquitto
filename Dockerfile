@@ -1,8 +1,8 @@
 # Pull base image
-FROM resin/rpi-raspbian:jessie
-MAINTAINER Pascal de Vink <pascal.de.vink@gmail.com>
+FROM balenalib/raspberrypi3-debian:jessie-20190301
+MAINTAINER Pascal Hartig <i@passy.me>
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get install -y wget apt-transport-https ca-certificates
 
 RUN wget -q -O - http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | apt-key add -
 RUN wget -q -O /etc/apt/sources.list.d/mosquitto-jessie.list http://repo.mosquitto.org/debian/mosquitto-jessie.list
